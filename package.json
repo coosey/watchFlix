@@ -1,0 +1,20 @@
+{
+  "name": "watchflix",
+  "version": "1.0.0",
+  "description": "An application for users to discover and favorite movies and TV",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coosey/watchFlix.git"
+  },
+  "keywords": [],
+  "author": "Matthew Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coosey/watchFlix/issues"
+  },
+  "homepage": "https://github.com/coosey/watchFlix#readme"
+}
