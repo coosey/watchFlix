@@ -1,2 +1,5 @@
-node_modules
+node_modules/
 bundle.js
+
+# server configuration
+server/config/config.js
