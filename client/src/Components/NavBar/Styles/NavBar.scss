@@ -1,6 +1,40 @@
+/* TITLE HEADER */
+h1 {
+  margin-right: 100px;
+  font-size: 60px;
+  color: red;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  align-self: flex-end;
+}
+
+/* NAVBAR */
 .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   margin: 25px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* LINKS */
+.movies-link, .tv-link {
+  margin: 10px;
+  font-size: 25px;
+  align-self: center;
+}
+
+/* SEARCH BAR */
+.searchBar {
+  align-self: center;
+}
+
+.ant-input {
+  width: 250px;
+}
+
+ /* SIGN-IN */
+.signIn-link {
+  font-size: 20px;
+  text-decoration: underline;
+  align-self: center;
 }

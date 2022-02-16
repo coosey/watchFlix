@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/Links.scss";
+import "../Styles/NavBar.scss";
 
 const Movies = () => {
   return (

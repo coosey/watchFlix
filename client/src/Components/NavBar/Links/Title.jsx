@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/Title.scss";
+import "../Styles/NavBar.scss";
 
 const Title = () => {
   return (

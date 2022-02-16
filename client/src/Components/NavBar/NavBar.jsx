@@ -12,6 +12,7 @@ const NavBar = () => {
       <Title />
       <Movies />
       <TV />
+      <SearchBar />
       <SignIn />
     </div>
   )

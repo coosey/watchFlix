@@ -1,8 +1,18 @@
 import React from "react";
+import "./Styles/NavBar.scss";
+import { Input } from "antd";
+
 
 const SearchBar = () => {
+  const { Search } = Input;
   return (
-   <div></div>
+   <div className="searchBar">
+    <Search
+      placeholder="Search for a movie or TV show"
+      enterButton
+      // onSearch
+    />
+   </div>
   )
 }
 
