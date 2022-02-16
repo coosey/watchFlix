@@ -1,5 +1,5 @@
 node_modules/
 bundle.js
 
-# server configuration
+# API_KEY
 config/config.js
