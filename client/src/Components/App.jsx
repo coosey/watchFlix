@@ -1,10 +1,11 @@
 import React from "react";
-import "../Styles/App.scss";
+import "./App.scss";
+import NavBar from "./NavBar/NavBar.jsx";
 
 const App = () => {
   return (
     <div>
-      <h1>WatchFlix</h1>
+      <NavBar />
     </div>
   )
 }
