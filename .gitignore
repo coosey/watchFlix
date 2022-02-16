@@ -2,4 +2,4 @@ node_modules/
 bundle.js
 
 # server configuration
-server/config/config.js
+config/config.js
