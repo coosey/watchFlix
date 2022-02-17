@@ -9,10 +9,10 @@ let config = {
 
 module.exports = {
   // return a list of trending movies for the week
-  getTrending: (req, res) => {
+  getTrendingMovies: (req, res) => {
     axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`, config)
       .then((result) => {
-        console.log('Successfully retrieved trending movies for the week!')
+        console.log('Successfully retrieved trending movies!')
         res.status(200).send(result.data)
       })
       .catch((err) => {

@@ -14,7 +14,7 @@ const Top10Movies = () => {
       .catch((err) => console.error(err));
   }, [])
 
-  console.log("movies: ", movies)
+  // console.log("movies: ", movies)
   return (
     <div></div>
   )
