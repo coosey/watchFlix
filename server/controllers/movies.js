@@ -1,4 +1,4 @@
-const API_KEY = require("../../config/config.js");
+const API_KEY = require("../../config/config.js").API_KEY;
 const axios = require("axios");
 
 let config = {
