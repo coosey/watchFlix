@@ -2,6 +2,8 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 
+const moviesRouter = require("./routers/moviesRouter.js");
+
 const app = express();
 const PORT = 3001;
 
