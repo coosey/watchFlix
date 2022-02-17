@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.scss";
 import NavBar from "./NavBar/NavBar.jsx";
-import Movies from "./Movies/Movies.jsx";
+import TopMovies from "./Movies/TopMovies.jsx";
 
 const App = () => {
   return (
     <div>
       <NavBar />
-      <Movies />
+      <TopMovies />
     </div>
   )
 }
