@@ -8,14 +8,14 @@ import "./Styles/NavBar.scss";
 
 const NavBar = () => {
   return (
-    <div className="navbar">
-      <Title />
-      <Movies />
-      <TV />
-      <SearchBar />
-      <SignIn />
-    </div>
+    <div className="navbar"></div>
   )
 }
 
 export default NavBar;
+
+{/* <Title />
+<Movies />
+<TV />
+<SearchBar />
+<SignIn /> */}

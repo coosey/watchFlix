@@ -2,3 +2,10 @@ html {
   background: #525252;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+nav {
+  display: flex;
+  margin: 25px;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
