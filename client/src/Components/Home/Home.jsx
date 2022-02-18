@@ -4,7 +4,10 @@ import TopTV from "../TV/TopTV.jsx";
 
 const Home = () => {
   return (
-    <div className="home-page">THIS IS THE HOME PAGE</div>
+    <div className="home-page">
+      <TopMovies />
+      <TopTV />
+    </div>
   )
 }
 

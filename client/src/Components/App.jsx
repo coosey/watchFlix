@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.scss";
 import Home from "./Home/Home.jsx";
-import NavBar from "./NavBar/NavBar.jsx";
 import MoviePage from "./Movies/MoviePage.jsx";
 import TvPage from "./TV/TvPage.jsx";
 import SignIn from "./NavBar/SignIn.jsx";
@@ -9,10 +8,11 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
+  Link,
 } from "react-router-dom";
 
 const App = () => {
+
   return (
     <Router>
       <nav>
@@ -23,20 +23,20 @@ const App = () => {
           WatchFlix
         </Link>
         <Link
-        to="/movies"
-        className="header-link"
+          to="/movies"
+          className="header-link"
         >
           Movies
         </Link>
         <Link
-        to="/tv"
-        className="header-link"
+          to="/tv"
+          className="header-link"
         >
           TV
         </Link>
         <Link
-        to="/sign-in"
-        className="header-link"
+          to="/sign-in"
+          className="header-link"
         >
           sign in
         </Link>

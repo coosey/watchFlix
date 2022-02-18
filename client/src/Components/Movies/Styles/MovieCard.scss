@@ -1,0 +1,10 @@
+.movie-container {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 0 1 calc(20% - 20px);
+}
+
+.movie-card {
+  background-color: white;
+  margin: 5px;
+}

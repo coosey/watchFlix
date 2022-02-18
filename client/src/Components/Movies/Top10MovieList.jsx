@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import MovieCard from "./MovieCard.jsx";
 import axios from "axios";
 
 const Top10Movies = () => {
@@ -14,9 +15,11 @@ const Top10Movies = () => {
       .catch((err) => console.error(err));
   }, [])
 
-  // console.log("movies: ", movies)
+  console.log("movies: ", movies)
   return (
-    <div></div>
+    <div>
+      <MovieCard movies={movies} />
+    </div>
   )
 }
 

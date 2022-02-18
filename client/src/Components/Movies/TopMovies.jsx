@@ -4,7 +4,7 @@ import "./Styles/TopMovies.scss";
 
 const TopMovies = () => {
   return (
-    <div>
+    <div className="top-movies">
       <h2>Top 10 Movies</h2>
       <Top10MovieList />
     </div>
