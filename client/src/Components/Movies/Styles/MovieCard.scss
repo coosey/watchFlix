@@ -9,13 +9,18 @@
     margin: 5px;
     display: inline-block;
   }
-
   .ant-card-meta-title {
     margin: 5px;
   }
-
-  .ant-card-meta-description {
+  p {
     margin: 5px;
     color: grey;
+  }
+  .movie-avg {
+    margin: 3px 0 0 7px;
+    width: 25px;
+    color: black;
+    outline: 1px solid black;
+    text-align: center;
   }
 }

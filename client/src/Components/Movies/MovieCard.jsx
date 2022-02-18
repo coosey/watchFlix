@@ -20,10 +20,16 @@ const MovieCard = ({movies}) => {
             />
           }
         >
-          <Meta
-            title={movie.original_title}
-            description={`Rating: ${movie.vote_average}`}
-          />
+          <Meta title={movie.original_title} />
+          <p>Genre</p>
+          <p
+            className="movie-avg"
+            style={{
+              color: (movie.vote_average >= 8) ? "green" : (movie.vote_average < 8 && movie.vote_average >= 6) ? "darkOrange" : "red"
+            }}
+          >
+            {movie.vote_average}
+          </p>
         </Card>
       ))
       }
