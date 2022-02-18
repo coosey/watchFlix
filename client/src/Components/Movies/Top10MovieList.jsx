@@ -15,7 +15,6 @@ const Top10Movies = () => {
       .catch((err) => console.error(err));
   }, [])
 
-  console.log("movies: ", movies)
   return (
     <div>
       <MovieCard movies={movies} />

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Card, Spin } from "antd";
 import "./Styles/MovieCard.scss";
+import genres from "./movieGenres.js";
 
 const MovieCard = ({movies}) => {
   const { Meta } = Card;
-
+  console.log("genres: ", genres)
   return (
     <div className="movie-container">
-      { movies.map(movie => (
+      { movies.slice(0, 10).map(movie => (
         <Card
           className="movie-card"
           key={movie.id}
@@ -21,7 +22,11 @@ const MovieCard = ({movies}) => {
           }
         >
           <Meta title={movie.original_title} />
-          <p>Genre</p>
+            {movie.genre_ids.map(id => (
+              <span key={id}>
+                {genres[id]}
+              </span>
+            ))}
           <p
             className="movie-avg"
             style={{
