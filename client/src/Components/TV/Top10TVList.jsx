@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import TvCard from "./TvCard.jsx";
 import axios from "axios";
 
 const Top10TVList = () => {
@@ -14,9 +15,11 @@ const Top10TVList = () => {
       .catch((err) => console.error(err));
   }, [])
 
-  // console.log("TV: ", tv);
+  console.log("TV: ", tv);
   return (
-    <div></div>
+    <div>
+      <TvCard tv={tv} />
+    </div>
   )
 }
 

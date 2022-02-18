@@ -4,7 +4,7 @@ import "./Styles/TopTV.scss";
 
 const TopTV = () => {
   return (
-    <div>
+    <div className="top-tv">
       <h2>Top 10 TV Shows</h2>
       <Top10TVList />
     </div>
