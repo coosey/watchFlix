@@ -9,8 +9,9 @@ const MovieCard = ({movies}) => {
     <div className="movie-container">
       { movies.map(movie => (
         <Card
-          key={movie.id}
           className="movie-card"
+          key={movie.id}
+          bordered={true}
           style={{ width: 262, height: 400 }}
           cover={
             <img

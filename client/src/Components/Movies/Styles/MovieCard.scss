@@ -2,9 +2,20 @@
   display: flex;
   flex-flow: row wrap;
   flex: 0 1 calc(20% - 20px);
-}
+  margin: 10px;
 
-.movie-card {
-  background-color: white;
-  margin: 5px;
+  .movie-card {
+    background-color: white;
+    margin: 5px;
+    display: inline-block;
+  }
+
+  .ant-card-meta-title {
+    margin: 5px;
+  }
+
+  .ant-card-meta-description {
+    margin: 5px;
+    color: grey;
+  }
 }
