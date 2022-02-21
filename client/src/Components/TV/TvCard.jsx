@@ -11,8 +11,8 @@ const TvCard = ({tv}) => {
         <Card
           className="tv-card"
           key={tv.id}
-          // bordered={true}
-          style={{ width: 262, height: 420 }}
+          bordered={true}
+          style={{ width: 262, height: 420, boxShadow: "0 0 4px #eee" }}
           cover={
             <img
               style={{ width: 262, height: 300 }}

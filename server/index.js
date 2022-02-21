@@ -15,6 +15,8 @@ app.use(express.static(__dirname + "/../client/dist"));
 
 app.use("/trending-movies", moviesRouter);
 app.use("/trending-tv", tvRouter);
+// need to fix
+app.use("/tv-cast", tvRouter);
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`)

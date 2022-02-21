@@ -4,6 +4,7 @@ import axios from "axios";
 
 const Top10TVList = () => {
   const [tv, setTV] = useState([]);
+  const [cast, setCast] = useState([]);
 
   useEffect(() => {
     const fetchTV = async () => {
@@ -14,8 +15,19 @@ const Top10TVList = () => {
     fetchTV()
       .catch((err) => console.error(err));
   }, [])
+  // need to fix
+  useEffect(() => {
+    const fetchTVCast = async () => {
+      const response = await axios.get("/tv-cast");
+      const json = await response.data.results;
+      setCast(json);
+    }
+    fetchTVCast()
+      .catch((err) => console.error(err));
+  }, [])
 
-  console.log("TV: ", tv);
+  console.log("cast: ", cast)
+  // console.log("TV: ", tv);
   return (
     <div>
       <TvCard tv={tv} />
