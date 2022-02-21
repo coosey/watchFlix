@@ -15,7 +15,6 @@ const Top10TVList = () => {
       .catch((err) => console.error(err));
   }, [])
 
-  console.log("TV: ", tv);
   return (
     <div>
       <TvCard tv={tv} />

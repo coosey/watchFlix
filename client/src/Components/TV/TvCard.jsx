@@ -5,19 +5,20 @@ import genres from "./tvGenres.js";
 import axios from "axios";
 
 const TvCard = ({tv}) => {
-  const [cast, setCast] = useState([]);
+  const [tvCast, setTvCast] = useState([]);
   const { Meta } = Card;
 
   useEffect(() => {
     const fetchTVCast = async () => {
-      const response = await axios.get("/tv/85552")
+      const response = await axios.get("/tv/85552");
       const json = await response.data;
-      setCast(json);
+      setTvCast(json);
     }
     fetchTVCast()
       .catch((err) => console.error(err));
   }, [])
-  console.log("CAST: ", cast)
+
+  console.log("TV CAST: ", tvCast)
 
   return (
     <div className="tv-container">

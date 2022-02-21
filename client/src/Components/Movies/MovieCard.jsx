@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Spin } from "antd";
 import "./Styles/MovieCard.scss";
 import genres from "./movieGenres.js";
+import axios from "axios";
 
 const MovieCard = ({movies}) => {
+  const [movieCast, setMovieCast] = useState([]);
   const { Meta } = Card;
+
+  useEffect(() => {
+    const fetchMovieCast = async () => {
+      const response = await axios.get("/movies/476669");
+      const json = await response.data;
+      setMovieCast(json);
+    }
+    fetchMovieCast()
+      .catch((err) => console.error(err))
+  }, [])
+
+  console.log("MOVIE CAST: ", movieCast)
 
   return (
     <div className="movie-container">

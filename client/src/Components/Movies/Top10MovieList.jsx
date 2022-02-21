@@ -4,7 +4,6 @@ import axios from "axios";
 
 const Top10Movies = () => {
   const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchMovie = async () => {

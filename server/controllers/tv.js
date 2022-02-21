@@ -25,6 +25,7 @@ module.exports = {
     const tv_id = req.params.id;
     axios.get(`https://api.themoviedb.org/3/tv/${tv_id}/credits?api_key=${API_KEY}`, config)
       .then((result) => {
+        console.log(`Retrieved cast for tv id: ${tv_id}`)
         res.status(200).send(result.data)
       })
       .catch((err) => {
