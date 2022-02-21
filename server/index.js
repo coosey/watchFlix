@@ -13,10 +13,8 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(__dirname + "/../client/dist"));
 
-app.use("/trending-movies", moviesRouter);
-app.use("/trending-tv", tvRouter);
-// need to fix
-app.use("/tv-cast", tvRouter);
+app.use("/movies", moviesRouter);
+app.use("/tv", tvRouter);
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`)

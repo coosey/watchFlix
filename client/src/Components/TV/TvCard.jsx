@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card } from "antd";
 import "./Styles/TvCard.scss";
 import genres from "./tvGenres.js";
+import axios from "axios";
 
 const TvCard = ({tv}) => {
+  const [cast, setCast] = useState([]);
   const { Meta } = Card;
+
+  useEffect(() => {
+    const fetchTVCast = async () => {
+      const response = await axios.get("/tv/85552")
+      const json = await response.data;
+      setCast(json);
+    }
+    fetchTVCast()
+      .catch((err) => console.error(err));
+  }, [])
+  console.log("CAST: ", cast)
+
   return (
     <div className="tv-container">
       { tv.slice(0, 10).map(tv => (

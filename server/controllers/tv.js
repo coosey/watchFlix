@@ -22,16 +22,14 @@ module.exports = {
   },
   // return the cast list of a specific TV show
   getTVCast: (req, res) => {
-    // need to fix for one specific id
     const tv_id = req.params.id;
-    axios.get(`https://api.themoviedb.org/3/tv/${tv_id}/credits?api_key=${API_KEY}&language=en-US`, config)
+    axios.get(`https://api.themoviedb.org/3/tv/${tv_id}/credits?api_key=${API_KEY}`, config)
       .then((result) => {
-        console.log(`Successfully retrieved TV casts for ${tv_id}`)
-        res.status(200).send(results.data)
+        res.status(200).send(result.data)
       })
       .catch((err) => {
         console.log(`Cannot retrieve TV casts for ${tv_id}`)
-        res.status(400).send(err)
+        res.status(400).send(err.message)
       })
   }
 }

@@ -3,6 +3,6 @@ const controller = require("../../controllers/tv.js");
 
 router.get("/", controller.getTrendingTV);
 // need to fix
-router.get("/", controller.getTVCast);
+router.get("/:id", controller.getTVCast);
 
 module.exports = router;

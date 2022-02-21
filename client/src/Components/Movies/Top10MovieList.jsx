@@ -8,7 +8,7 @@ const Top10Movies = () => {
 
   useEffect(() => {
     const fetchMovie = async () => {
-      const response = await axios.get("/trending-movies");
+      const response = await axios.get("/movies");
       const json = await response.data.results;
       setMovies(json);
     }
