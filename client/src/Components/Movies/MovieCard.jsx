@@ -15,7 +15,7 @@ const MovieCard = ({movies}) => {
   const getMovieCredits = (id) => {
     axios.get(`/movies/credits/${id}`)
       .then((response) => {
-        setMovieCredits(response.data);
+        setMovieCredits(response.data.cast);
       })
       .catch((err) => console.error(err));
   }
