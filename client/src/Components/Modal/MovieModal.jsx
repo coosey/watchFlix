@@ -22,9 +22,22 @@ const MovieModal = ({ modalVisible, hideModal, credits, details, setMovieDetails
         {Object.keys(credits).map((cast, i) => (
           <div key={i}>
             {credits.cast.map((cast) => (
-              <ul key={cast.cast_id}>
-                <li key={cast.cast_id}>{cast.name} - "{cast.character}"</li>
-              </ul>
+              // <ul key={cast.cast_id}>
+                <div
+                  className="movie-cast"
+                  key={cast.cast_id}
+                >
+                    <img
+                      style={{ width: 50, height: 50, borderRadius: "50%"}}
+                      src={
+                        cast.profile_path ? `https://image.tmdb.org/t/p/original${cast.profile_path}` :
+                        "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-11.jpg"
+                      }
+                    />
+                    <div>{cast.name} - "{cast.character}"</div>
+
+                </div>
+              // </ul>
             ))}
           </div>
         ))}
