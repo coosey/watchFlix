@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./MovieModal.scss";
 import axios from "axios";
 
-const MovieModal = ({ modalVisible, hideModal, movieCast, movieTitle }) => {
+const MovieModal = ({ modalVisible, hideModal, movieCast, movieTitle, description }) => {
   const showHideClassName = modalVisible ? "modal display-block" : "modal display-none";
 
   console.log("MOVIE CAST: ", movieCast)

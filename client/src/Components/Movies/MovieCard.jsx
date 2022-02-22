@@ -8,6 +8,7 @@ import axios from "axios";
 const MovieCard = ({movies}) => {
   const [movieCast, setMovieCast] = useState([]);
   const [movieTitle, setMovieTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
   const { Meta } = Card;
 
@@ -20,7 +21,7 @@ const MovieCard = ({movies}) => {
 
   const showModal = () => setModalVisible(true);
   const hideModal = () => setModalVisible(false);
-
+  console.log(description)
   return (
     <div className="movie-container">
       { movies.slice(0, 10).map(movie => (
@@ -30,6 +31,7 @@ const MovieCard = ({movies}) => {
             showModal();
             getMovieCast(movie.id);
             setMovieTitle(movie.title);
+            setDescription(movie.overview);
           }}
           key={movie.id}
           bordered={true}
@@ -62,6 +64,7 @@ const MovieCard = ({movies}) => {
         hideModal={hideModal}
         movieCast={movieCast}
         movieTitle={movieTitle}
+        description={description}
       />
     </div>
   )
