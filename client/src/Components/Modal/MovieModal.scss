@@ -10,11 +10,15 @@
 .modal-main {
   position:fixed;
   background: white;
-  width: 80%;
-  height: auto;
+  width: 50%;
+  height: 300px;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+
+  h3 {
+    margin: 20px;
+  }
 }
 
 .display-block {

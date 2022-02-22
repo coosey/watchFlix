@@ -7,31 +7,30 @@ import axios from "axios";
 
 const MovieCard = ({movies}) => {
   const [movieCast, setMovieCast] = useState([]);
+  const [movieTitle, setMovieTitle] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
   const { Meta } = Card;
 
-  useEffect(() => {
-    const fetchMovieCast = async () => {
-      const response = await axios.get("/movies/476669");
-      const json = await response.data;
-      setMovieCast(json);
-    }
-    fetchMovieCast()
-      .catch((err) => console.error(err))
-  }, [])
+  const getMovieCast = (id) => {
+    axios.get(`/movies/${id}`)
+      .then((response) => {
+        setMovieCast(response.data);
+      })
+  }
 
   const showModal = () => setModalVisible(true);
-
   const hideModal = () => setModalVisible(false);
-
-  console.log("MOVIE CAST: ", movieCast)
 
   return (
     <div className="movie-container">
       { movies.slice(0, 10).map(movie => (
         <Card
           className="movie-card"
-          onClick={showModal}
+          onClick={() => {
+            showModal();
+            getMovieCast(movie.id);
+            setMovieTitle(movie.title);
+          }}
           key={movie.id}
           bordered={true}
           style={{ width: 262, height: 420, boxShadow: "0 0 4px #eee" }}
@@ -58,7 +57,12 @@ const MovieCard = ({movies}) => {
           </p>
         </Card>
       ))}
-      <MovieModal modalVisible={modalVisible} hideModal={hideModal} />
+      <MovieModal
+        modalVisible={modalVisible}
+        hideModal={hideModal}
+        movieCast={movieCast}
+        movieTitle={movieTitle}
+      />
     </div>
   )
 }
