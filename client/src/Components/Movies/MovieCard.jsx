@@ -9,7 +9,6 @@ const MovieCard = ({movies}) => {
   const [movieCredits, setMovieCredits] = useState([]);
   const [movieDetails, setMovieDetails] = useState({ title: "", overview: "", date: "", time: 0 });
   const [modalVisible, setModalVisible] = useState(false);
-  const [id, setId] = useState(null);
   const { Meta } = Card;
 
   const getMovieCredits = (id) => {
@@ -37,8 +36,6 @@ const MovieCard = ({movies}) => {
   const showModal = () => setModalVisible(true);
   const hideModal = () => setModalVisible(false);
 
-  // console.log("MOVIE DETAILS: ", movieDetails)
-  // console.log("MOVIE CREDITS: ", movieCredits)
   return (
     <div className="movie-container">
       { movies.slice(0, 10).map(movie => (

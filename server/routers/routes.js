@@ -10,5 +10,6 @@ router.get("/movies/details/:id", movies);
 // TV Router
 router.get("/tv", tv);
 router.get("/tv/credits/:id", tv);
+router.get("/tv/details/:id", tv);
 
 module.exports = router;

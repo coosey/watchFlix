@@ -29,8 +29,21 @@ module.exports = {
         res.status(200).send(result.data)
       })
       .catch((err) => {
-        console.log(`Cannot retrieve TV casts for ${tv_id}`)
+        console.log(`Cannot retrieve tv casts for ${tv_id}`)
         res.status(400).send(err.message)
+      })
+  },
+  // return the details of a specific tv show
+  getTVDetails: (req, res) => {
+    const tv_id = req.params.id;
+    axios.get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=${API_KEY}`, config)
+      .then((result) => {
+        console.log(`Retrieved details for tv id: ${tv_id}`)
+        res.status(200).send(result.data);
+      })
+      .catch((err) => {
+        console.log(`Cannot retrieve tv details for ${tv_id}`)
+        res.status(400).send(err.message);
       })
   }
 }

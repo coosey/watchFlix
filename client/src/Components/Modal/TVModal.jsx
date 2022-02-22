@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Modal.scss";
 import axios from "axios";
 
-const MovieModal = ({ modalVisible, hideModal, credits, details, setMovieDetails }) => {
+const TVModal = ({ modalVisible, hideModal, credits, details, setTvDetails }) => {
   const showHideClassName = modalVisible ? "modal display-block" : "modal display-none";
 
   return (
@@ -10,16 +10,16 @@ const MovieModal = ({ modalVisible, hideModal, credits, details, setMovieDetails
       className={showHideClassName}
       onClick={() => {
         hideModal();
-        setMovieDetails({ title: "", overview: "", date: "", time: 0 });
+        setTvDetails({ name: "", overview: "", episode_run_time: [], first_air_date: "", last_air_date: "", number_of_seasons: 0, number_of_episodes: 0 });
       }}
     >
       <section className="modal-main">
-        <h1>{details.title}</h1>
+        <h1>{details.name}</h1>
         <div className="overview">{details.overview}</div>
         {credits.map((cast) => (
           <div
             className="cast"
-            key={cast.cast_id}
+            key={cast.id}
           >
             <img
               src={
@@ -36,4 +36,4 @@ const MovieModal = ({ modalVisible, hideModal, credits, details, setMovieDetails
   )
 }
 
-export default MovieModal;
+export default TVModal;

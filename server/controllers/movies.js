@@ -33,7 +33,7 @@ module.exports = {
         res.status(400).send(err.message);
       })
   },
-  // return the movie details of a specific movie
+  // return the details of a specific movie
   getMovieDetails: (req, res) => {
     const movie_id = req.params.id;
     axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}`, config)
