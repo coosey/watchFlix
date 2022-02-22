@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "antd";
+import { Card, Modal } from "antd";
 import "./Styles/TvCard.scss";
 import genres from "./tvGenres.js";
 import axios from "axios";

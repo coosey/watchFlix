@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Card, Spin } from "antd";
+import { Card } from "antd";
 import "./Styles/MovieCard.scss";
 import genres from "./movieGenres.js";
+import MovieModal from "../Modal/MovieModal.jsx";
 import axios from "axios";
 
 const MovieCard = ({movies}) => {
   const [movieCast, setMovieCast] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
   const { Meta } = Card;
 
   useEffect(() => {
@@ -18,6 +20,10 @@ const MovieCard = ({movies}) => {
       .catch((err) => console.error(err))
   }, [])
 
+  const showModal = () => setModalVisible(true);
+
+  const hideModal = () => setModalVisible(false);
+
   console.log("MOVIE CAST: ", movieCast)
 
   return (
@@ -25,6 +31,7 @@ const MovieCard = ({movies}) => {
       { movies.slice(0, 10).map(movie => (
         <Card
           className="movie-card"
+          onClick={showModal}
           key={movie.id}
           bordered={true}
           style={{ width: 262, height: 420, boxShadow: "0 0 4px #eee" }}
@@ -51,6 +58,7 @@ const MovieCard = ({movies}) => {
           </p>
         </Card>
       ))}
+      <MovieModal modalVisible={modalVisible} hideModal={hideModal} />
     </div>
   )
 }
