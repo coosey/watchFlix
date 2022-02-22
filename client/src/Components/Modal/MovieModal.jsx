@@ -17,8 +17,17 @@ const MovieModal = ({ modalVisible, hideModal, credits, details, setMovieDetails
       }}
     >
       <section className="modal-main">
-        <h2>{details.title}</h2>
-        <div>{details.overview}</div>
+        <h1>{details.title}</h1>
+        <div className="overview">{details.overview}</div>
+        {Object.keys(credits).map((cast, i) => (
+          <div key={i}>
+            {credits.cast.map((cast) => (
+              <ul key={cast.cast_id}>
+                <li key={cast.cast_id}>{cast.name} - "{cast.character}"</li>
+              </ul>
+            ))}
+          </div>
+        ))}
       </section>
     </div>
   )
