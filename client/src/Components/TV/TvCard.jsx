@@ -10,7 +10,7 @@ const TvCard = ({tv}) => {
 
   useEffect(() => {
     const fetchTVCast = async () => {
-      const response = await axios.get("/tv/85552");
+      const response = await axios.get("/tv/credits/85552");
       const json = await response.data;
       setTvCast(json);
     }
@@ -27,7 +27,6 @@ const TvCard = ({tv}) => {
           className="tv-card"
           key={tv.id}
           bordered={true}
-          style={{ width: 262, height: 420, boxShadow: "0 0 4px #eee" }}
           cover={
             <img
               style={{ width: 262, height: 300 }}

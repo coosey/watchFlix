@@ -2,18 +2,23 @@ import React, { useEffect, useState } from "react";
 import "./MovieModal.scss";
 import axios from "axios";
 
-const MovieModal = ({ modalVisible, hideModal, movieCast, movieTitle, description }) => {
+const MovieModal = ({ modalVisible, hideModal, credits, details, setMovieDetails }) => {
   const showHideClassName = modalVisible ? "modal display-block" : "modal display-none";
 
-  console.log("MOVIE CAST: ", movieCast)
+  // console.log("MOVIE CREDITS: ", credits) // cast and crew
+  console.log("MOVIE DETAILS: ", details)
 
   return (
     <div
       className={showHideClassName}
-      onClick={hideModal}
+      onClick={() => {
+        hideModal();
+        setMovieDetails({ title: "", overview: "", date: "", time: 0 });
+      }}
     >
       <section className="modal-main">
-        <h3>{movieTitle}</h3>
+        <h2>{details.title}</h2>
+        <div>{details.overview}</div>
       </section>
     </div>
   )

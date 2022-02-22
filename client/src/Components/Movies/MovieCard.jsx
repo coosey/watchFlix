@@ -1,41 +1,56 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "antd";
-import "./Styles/MovieCard.scss";
 import genres from "./movieGenres.js";
 import MovieModal from "../Modal/MovieModal.jsx";
 import axios from "axios";
+import "./Styles/MovieCard.scss";
 
 const MovieCard = ({movies}) => {
-  const [movieCast, setMovieCast] = useState([]);
-  const [movieTitle, setMovieTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [movieCredits, setMovieCredits] = useState([]);
+  const [movieDetails, setMovieDetails] = useState({ title: "", overview: "", date: "", time: 0 });
   const [modalVisible, setModalVisible] = useState(false);
+  const [id, setId] = useState(null);
   const { Meta } = Card;
 
-  const getMovieCast = (id) => {
-    axios.get(`/movies/${id}`)
+  const getMovieCredits = (id) => {
+    axios.get(`/movies/credits/${id}`)
       .then((response) => {
-        setMovieCast(response.data);
+        setMovieCredits(response.data);
       })
+      .catch((err) => console.error(err));
+  }
+
+  const getMovieDetails = (id) => {
+    axios.get(`/movies/details/${id}`)
+      .then((response) => {
+        let data = response.data;
+        setMovieDetails({
+          title: data.original_title,
+          overview: data.overview,
+          date: data.release_date,
+          time: data.runtime
+        });
+      })
+      .catch((err) => console.error(err));
   }
 
   const showModal = () => setModalVisible(true);
   const hideModal = () => setModalVisible(false);
-  console.log(description)
+
+  // console.log("MOVIE DETAILS: ", movieDetails)
+  // console.log("MOVIE CREDITS: ", movieCredits)
   return (
     <div className="movie-container">
       { movies.slice(0, 10).map(movie => (
         <Card
           className="movie-card"
+          key={movie.id}
           onClick={() => {
             showModal();
-            getMovieCast(movie.id);
-            setMovieTitle(movie.title);
-            setDescription(movie.overview);
+            getMovieCredits(movie.id);
+            getMovieDetails(movie.id);
           }}
-          key={movie.id}
           bordered={true}
-          style={{ width: 262, height: 420, boxShadow: "0 0 4px #eee" }}
           cover={
             <img
               style={{ width: 262, height: 300 }}
@@ -62,9 +77,9 @@ const MovieCard = ({movies}) => {
       <MovieModal
         modalVisible={modalVisible}
         hideModal={hideModal}
-        movieCast={movieCast}
-        movieTitle={movieTitle}
-        description={description}
+        credits={movieCredits}
+        details={movieDetails}
+        setMovieDetails={setMovieDetails}
       />
     </div>
   )
