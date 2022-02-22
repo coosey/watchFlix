@@ -5,8 +5,8 @@ import axios from "axios";
 const MovieModal = ({ modalVisible, hideModal, credits, details, setMovieDetails }) => {
   const showHideClassName = modalVisible ? "modal display-block" : "modal display-none";
 
-  // console.log("MOVIE CREDITS: ", credits) // cast and crew
-  console.log("MOVIE DETAILS: ", details)
+  console.log("MOVIE CREDITS: ", credits) // cast and crew
+  // console.log("MOVIE DETAILS: ", details)
 
   return (
     <div
