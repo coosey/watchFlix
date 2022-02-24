@@ -20,11 +20,22 @@
   h1 {
     margin: 20px;
     text-align: center;
-    font-size: 30px;
+    font-size: 35px;
   }
   .overview {
     margin: 20px;
     font-size: 20px;
+    border-top: groove;
+    border-bottom: groove;
+    padding: 10px 0px 10px 0px;
+  }
+  .cast-title {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    p {
+      margin: 5px;
+    }
   }
   .cast {
     display: flex;
@@ -39,6 +50,7 @@
       display: flex;
       align-items: center;
       padding: 10px;
+      font-size: 20px;
     }
   }
 

@@ -16,6 +16,11 @@ const MovieModal = ({ modalVisible, hideModal, credits, details, setMovieDetails
       <section className="modal-main">
         <h1>{details.title}</h1>
         <div className="overview">{details.overview}</div>
+        <div className="cast-title">
+          <p>Release Date: {details.date}</p>
+          <p>Movie Length: {details.time} minutes</p>
+          <p>Cast:</p>
+        </div>
         {credits.map((cast) => (
           <div
             className="cast"
