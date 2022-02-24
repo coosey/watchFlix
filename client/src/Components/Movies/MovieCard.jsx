@@ -73,10 +73,11 @@ const MovieCard = ({movies}) => {
       ))}
       <MovieModal
         modalVisible={modalVisible}
-        hideModal={hideModal}
+        hide={hideModal}
         credits={movieCredits}
         details={movieDetails}
         setMovieDetails={setMovieDetails}
+        setMovieCredits={setMovieCredits}
       />
     </div>
   )

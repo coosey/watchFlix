@@ -1,19 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Modal.scss";
 import axios from "axios";
 
-const MovieModal = ({ modalVisible, hideModal, credits, details, setMovieDetails }) => {
+const MovieModal = ({ modalVisible, hide, credits, details, setMovieDetails, setMovieCredits }) => {
   const showHideClassName = modalVisible ? "modal display-block" : "modal display-none";
 
+  function useOutsideAlerter(ref) {
+    useEffect(() => {
+      function handleClickOutside(e) {
+        if (ref.current && !ref.current.contains(e.target)) {
+          hide();
+          setMovieDetails({
+            title: "",
+            overview: "",
+            date: "",
+            time: 0
+          });
+          setMovieCredits([]);
+        }
+      }
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      }
+    }, [ref]);
+  };
+
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef);
+
   return (
-    <div
-      className={showHideClassName}
-      onClick={() => {
-        hideModal();
-        setMovieDetails({ title: "", overview: "", date: "", time: 0 });
-      }}
-    >
-      <section className="modal-main">
+    <div className={showHideClassName}>
+      <section className="modal-main" ref={wrapperRef}>
         <h1>{details.title}</h1>
         <div className="overview">{details.overview}</div>
         <div className="details">

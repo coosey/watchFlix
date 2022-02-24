@@ -10,7 +10,7 @@ const TvCard = ({tv}) => {
   const [tvDetails, setTvDetails] = useState({ name: "", overview: "", episode_run_time: [], first_air_date: "", last_air_date: "", number_of_seasons: 0, number_of_episodes: 0 });
   const [modalVisible, setModalVisible] = useState(false);
   const { Meta } = Card;
-  // name, character, profile_path
+
   const getTVCredits = (id) => {
     axios.get(`/tv/credits/${id}`)
       .then((response) => {
@@ -76,10 +76,11 @@ const TvCard = ({tv}) => {
       ))}
       <TVModal
         modalVisible={modalVisible}
-        hideModal={hideModal}
+        hide={hideModal}
         credits={tvCredits}
         details={tvDetails}
         setTvDetails={setTvDetails}
+        setTvCredits={setTvCredits}
       />
     </div>
   )

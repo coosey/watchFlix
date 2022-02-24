@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Modal.scss";
 import axios from "axios";
 
-const TVModal = ({ modalVisible, hideModal, credits, details, setTvDetails }) => {
+const TVModal = ({ modalVisible, hide, credits, details, setTvDetails, setTvCredits }) => {
   const showHideClassName = modalVisible ? "modal display-block" : "modal display-none";
-  const length = (array) => {
+
+  const tvLength = (array) => {
     let total = 0;
     for (let i = 0; i < array.length; i++) {
       total += array[i];
@@ -13,21 +14,41 @@ const TVModal = ({ modalVisible, hideModal, credits, details, setTvDetails }) =>
     return Math.round(average);
   }
 
+  function useOutsideAlerter(ref) {
+    useEffect(() => {
+      function handleClickOutside(e) {
+        if (ref.current && !ref.current.contains(e.target)) {
+          hide();
+          setTvDetails({
+            name: "",
+            overview: "",
+            episode_run_time: [],
+            first_air_date: "",
+            last_air_date: "",
+            number_of_seasons: 0,
+            number_of_episodes: 0
+          });
+          setTvCredits([]);
+        }
+      }
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      }
+    }, [ref]);
+  };
+
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef);
   return (
-    <div
-      className={showHideClassName}
-      onClick={() => {
-        hideModal();
-        setTvDetails({ name: "", overview: "", episode_run_time: [], first_air_date: "", last_air_date: "", number_of_seasons: 0, number_of_episodes: 0 });
-      }}
-    >
-      <section className="modal-main">
+    <div className={showHideClassName}>
+      <section className="modal-main" ref={wrapperRef}>
         <h1>{details.name}</h1>
         <div className="overview">{details.overview}</div>
         <div className="details">
           <p>Release Date: {details.first_air_date}</p>
           <p>Last Air Date: {details.last_air_date}</p>
-          <p>Average Length: {length(details.episode_run_time)} minutes</p>
+          <p>Average Length: {tvLength(details.episode_run_time)} minutes</p>
           <p>Seasons: {details.number_of_seasons}</p>
           <p>Episodes: {details.number_of_episodes}</p>
         </div>
