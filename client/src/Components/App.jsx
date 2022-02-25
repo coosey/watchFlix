@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.scss";
 import HomePage from "./Home/HomePage.jsx";
-import MoviePage from "./Movies/MoviePage.jsx";
-import TvPage from "./TV/TvPage.jsx";
+import MoviePage from "./MoviePage/MoviePage.jsx";
+import TvPage from "./TvPage/TvPage.jsx";
 import SignIn from "./NavBar/SignIn.jsx";
 import {
   BrowserRouter as Router,
