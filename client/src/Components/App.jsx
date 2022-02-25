@@ -23,13 +23,13 @@ const App = () => {
           WatchFlix
         </Link>
         <Link
-          to="/movies"
+          to="/movie-page"
           className="header-link"
         >
           Movies
         </Link>
         <Link
-          to="/tv"
+          to="/tv-page"
           className="header-link"
         >
           TV
@@ -43,8 +43,8 @@ const App = () => {
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/movies" element={<MoviePage />} />
-        <Route path="/tv" element={<TvPage />} />
+        <Route path="/movie-page" element={<MoviePage />} />
+        <Route path="/tv-page" element={<TvPage />} />
         <Route path="/sign-in" element={<SignIn />} />
       </Routes>
     </Router>

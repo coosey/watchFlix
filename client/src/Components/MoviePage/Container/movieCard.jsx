@@ -1,9 +1,9 @@
 import React from "react";
 
-const movieCard = () => {
+const MovieCard = () => {
   return (
     <div></div>
   )
 }
 
-export default movieCard;
+export default MovieCard;
