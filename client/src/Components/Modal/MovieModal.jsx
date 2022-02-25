@@ -53,6 +53,7 @@ const MovieModal = ({ modalVisible, hide, credits, details, setMovieDetails, set
           <p>Length: {details.time} minutes</p>
           <p>Casts:</p>
         </div>
+        <div className="cast-container">
         {credits.map((cast) => (
           <div
             className="cast"
@@ -68,6 +69,7 @@ const MovieModal = ({ modalVisible, hide, credits, details, setMovieDetails, set
             <div>{cast.name} - "{cast.character}"</div>
           </div>
         ))}
+        </div>
       </section>
     </div>
   )

@@ -20,7 +20,7 @@ const Top10Movies = () => {
 
   return (
     <div>
-      { loading ? <div className="loader"></div> : <MovieCard movies={movies} />}
+      { loading ? <div className="loader"></div> : <MovieCard movies={movies} /> }
     </div>
   )
 }

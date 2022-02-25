@@ -67,6 +67,7 @@ const TVModal = ({ modalVisible, hide, credits, details, setTvDetails, setTvCred
           <p>Seasons: {details.number_of_seasons}</p>
           <p>Episodes: {details.number_of_episodes}</p>
         </div>
+        <div className="cast-container">
         {credits.map((cast) => (
           <div
             className="cast"
@@ -82,6 +83,7 @@ const TVModal = ({ modalVisible, hide, credits, details, setTvDetails, setTvCred
             <div>{cast.name} - "{cast.character}"</div>
           </div>
         ))}
+        </div>
       </section>
     </div>
   )
