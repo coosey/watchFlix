@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const controller = require("../../controllers/movies.js");
+const controller = require("../../controllers/movies/topMovies.js");
 
 router.get("/", controller.getTrendingMovies);
 router.get("/credits/:id", controller.getMovieCast);

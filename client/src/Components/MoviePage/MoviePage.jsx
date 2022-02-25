@@ -2,7 +2,7 @@ import React from "react";
 
 const MoviePage = () => {
   return (
-    <div>THIS IS THE MOVIE PAGE</div>
+    <div className="movie-page">THIS IS THE MOVIE PAGE</div>
   )
 }
 
