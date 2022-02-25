@@ -6,6 +6,7 @@ const tv = require("./routes/tvRouter.js");
 router.get("/movies", movies);
 router.get("/movies/credits/:id", movies);
 router.get("/movies/details/:id", movies);
+router.get("/movies/action", movies);
 
 // TV Router
 router.get("/tv", tv);
