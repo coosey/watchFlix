@@ -36,7 +36,11 @@ const TvCard = ({tv}) => {
       .catch((err) => console.error(err));
   };
 
-  const showModal = () => setModalVisible(true);
+  const showModal = () => {
+    setTimeout(() => {
+      setModalVisible(true)
+    }, 100)
+  };
   const hideModal = () => setModalVisible(false);
 
   return (

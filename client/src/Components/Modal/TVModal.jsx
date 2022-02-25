@@ -56,7 +56,7 @@ const TVModal = ({ modalVisible, hide, credits, details, setTvDetails, setTvCred
                 setShowMore(!showMore)
               }}
             >
-              {showMore ? "collapse" : "... expand"}
+              {showMore ? "Collapse" : "... Expand"}
             </span> : null
           }
         </div>

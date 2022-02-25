@@ -44,7 +44,7 @@ const MovieModal = ({ modalVisible, hide, credits, details, setMovieDetails, set
                 setShowMore(!showMore)
               }}
             >
-              {showMore ? "collapse" : "... expand"}
+              {showMore ? "Collapse" : "... Expand"}
             </span> : null
           }
         </div>
