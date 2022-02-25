@@ -4,6 +4,7 @@ import axios from "axios";
 
 const MovieModal = ({ modalVisible, hide, credits, details, setMovieDetails, setMovieCredits }) => {
   const showHideClassName = modalVisible ? "modal display-block" : "modal display-none";
+  const [showMore, setShowMore] = useState(false);
 
   function useOutsideAlerter(ref) {
     useEffect(() => {
@@ -17,6 +18,7 @@ const MovieModal = ({ modalVisible, hide, credits, details, setMovieDetails, set
             time: 0
           });
           setMovieCredits([]);
+          setShowMore(false);
         }
       }
       document.addEventListener("mousedown", handleClickOutside);
@@ -33,7 +35,19 @@ const MovieModal = ({ modalVisible, hide, credits, details, setMovieDetails, set
     <div className={showHideClassName}>
       <section className="modal-main" ref={wrapperRef}>
         <h1>{details.title}</h1>
-        <div className="overview">{details.overview}</div>
+        <div className="overview">
+          {showMore ? details.overview : `${details.overview.substring(0, 160)}`}
+          {details.overview.length >= 160 ?
+            <span
+              onClick={(e) => {
+                e.preventDefault();
+                setShowMore(!showMore)
+              }}
+            >
+              {showMore ? "collapse" : "... expand"}
+            </span> : null
+          }
+        </div>
         <div className="details">
           <p>Release Date: {details.date}</p>
           <p>Length: {details.time} minutes</p>

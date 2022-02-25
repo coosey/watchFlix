@@ -24,10 +24,10 @@ const MovieCard = ({movies}) => {
       .then((response) => {
         let data = response.data;
         setMovieDetails({
-          title: data.original_title,
-          overview: data.overview,
-          date: data.release_date,
-          time: data.runtime
+            title: data.original_title,
+            overview: data.overview,
+            date: data.release_date,
+            time: data.runtime
         });
       })
       .catch((err) => console.error(err));

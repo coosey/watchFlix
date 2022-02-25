@@ -2,7 +2,7 @@ import React from "react";
 import TopMovies from "../Movies/TopMovies.jsx";
 import TopTV from "../TV/TopTV.jsx";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div className="home-page">
       <TopMovies />
@@ -11,4 +11,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default HomePage;

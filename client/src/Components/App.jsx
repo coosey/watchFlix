@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import Home from "./Home/Home.jsx";
+import HomePage from "./Home/HomePage.jsx";
 import MoviePage from "./Movies/MoviePage.jsx";
 import TvPage from "./TV/TvPage.jsx";
 import SignIn from "./NavBar/SignIn.jsx";
@@ -42,7 +42,7 @@ const App = () => {
         </Link>
       </nav>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviePage />} />
         <Route path="/tv" element={<TvPage />} />
         <Route path="/sign-in" element={<SignIn />} />

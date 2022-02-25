@@ -4,6 +4,7 @@ import axios from "axios";
 
 const TVModal = ({ modalVisible, hide, credits, details, setTvDetails, setTvCredits }) => {
   const showHideClassName = modalVisible ? "modal display-block" : "modal display-none";
+  const [showMore, setShowMore] = useState(false);
 
   const tvLength = (array) => {
     let total = 0;
@@ -29,6 +30,7 @@ const TVModal = ({ modalVisible, hide, credits, details, setTvDetails, setTvCred
             number_of_episodes: 0
           });
           setTvCredits([]);
+          setShowMore(false);
         }
       }
       document.addEventListener("mousedown", handleClickOutside);
@@ -40,11 +42,24 @@ const TVModal = ({ modalVisible, hide, credits, details, setTvDetails, setTvCred
 
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
+
   return (
     <div className={showHideClassName}>
       <section className="modal-main" ref={wrapperRef}>
         <h1>{details.name}</h1>
-        <div className="overview">{details.overview}</div>
+        <div className="overview">
+          {showMore ? details.overview : `${details.overview.substring(0, 160)}`}
+          {details.overview.length >= 160 ?
+            <span
+              onClick={(e) => {
+                e.preventDefault();
+                setShowMore(!showMore)
+              }}
+            >
+              {showMore ? "collapse" : "... expand"}
+            </span> : null
+          }
+        </div>
         <div className="details">
           <p>Release Date: {details.first_air_date}</p>
           <p>Last Air Date: {details.last_air_date}</p>
