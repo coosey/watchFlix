@@ -1,0 +1,33 @@
+$itemGrow: 1.2;
+$duration: 250ms;
+
+.wrapper {
+  // overflow: hidden;
+  // scroll-behavior: smooth;
+
+  h2 {
+    margin: 30px;
+  }
+
+  .action-movies {
+    display: flex;
+    margin: 15px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 5px;
+  }
+
+  .movie-card {
+    background-color: white;
+    margin: 5px;
+    width: 262px;
+    height: 385px;
+    box-shadow: 0 0 5px #eee;
+    text-align: center;
+
+    .ant-card-meta-title {
+      margin: 5px;
+      display: inline-block;
+    }
+  }
+}
