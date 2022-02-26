@@ -1,33 +1,28 @@
-$itemGrow: 1.2;
-$duration: 250ms;
+h2 {
+  margin: 30px;
+}
 
-.wrapper {
-  // overflow: hidden;
-  // scroll-behavior: smooth;
+.action-movies {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
 
-  h2 {
-    margin: 30px;
+  .action-movies::-webkit-scrollbar {
+    width: 0px;
   }
+}
 
-  .action-movies {
-    display: flex;
-    margin: 15px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    padding: 5px;
-  }
 
-  .movie-card {
-    background-color: white;
+.movie-card {
+  background-color: white;
+  margin-right: 10px;
+  width: 262px;
+  height: 385px;
+  box-shadow: 0 0 5px #eee;
+  text-align: center;
+
+  .ant-card-meta-title {
     margin: 5px;
-    width: 262px;
-    height: 385px;
-    box-shadow: 0 0 5px #eee;
-    text-align: center;
-
-    .ant-card-meta-title {
-      margin: 5px;
-      display: inline-block;
-    }
+    display: inline-block;
   }
 }
